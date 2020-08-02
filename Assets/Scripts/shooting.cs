@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class shooting : MonoBehaviour
 {
-   public GameObject bullet;
-   public GameObject parent;
-
-
-   void Start()
+   public GameObject bullet = null;
+   Vector3 parent = GameObject.Find("Player").transform.position;
+   //new Vector3 temp = (parent.position.x, parent.position.y, parent.position.z);
+   Vector3 pos;
+   void Shootings()
    {
-       GameObject.Instantiate<GameObject>(bullet, parent.x,parent.y,parent.z,Quaternion.identity);
+       GameObject bulls = GameObject.Instantiate(this.bullet) as GameObject;
+       pos = GameObject.Find("pink").transform.position;
+       pos.x = parent.x;
+       pos.y = parent.y*2;
+       pos.z = parent.z;
+       //Instantiate(bullet, parent.position,Quaternion.identity);
    }
    void Update(){
-       bullet.Transform(parent.x, parent.y*2f,parent.z);
+     //  bullet.position = transform(temp.x, temp.y*2, temp.z);
    }
 }
