@@ -55,7 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Follow.cs" />
+     <Compile Include="Assets\Scripts\BulletCreate.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\shooting.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/최다연/Desktop/APPS/2020_달토끼/DalTokki/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
