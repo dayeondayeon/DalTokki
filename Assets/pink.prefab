@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6440218930241160791}
   - component: {fileID: 9221110349977975633}
-  - component: {fileID: -2601129287866473826}
+  - component: {fileID: -2475584315977131231}
   m_Layer: 0
   m_Name: pink
   m_TagString: Untagged
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2601129287866473826
+--- !u!114 &-2475584315977131231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

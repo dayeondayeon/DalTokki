@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
            foreach(Touch touch in Input.touches){
                Vector2 touchPos = new Vector2(touch.position.x, touch.position.y);
                     if(touch.phase == TouchPhase.Moved){
-                        Debug.Log(touchPos);
+                        //Debug.Log(touchPos);
                         //transform.position = touchPos;
                         touchPos.x = touchPos.x/180;
                         touchPos.y = touchPos.y/180;

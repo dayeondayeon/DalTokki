@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,10 +10,9 @@ public class shooting : MonoBehaviour
     pos = transform.position;
     pos.y += speed*Time.deltaTime;
     transform.position = pos;
-    if(pos.y > 10)
+    if(pos.y > 15)
     {
       Destroy(gameObject);
     }
   }
 }
-*/

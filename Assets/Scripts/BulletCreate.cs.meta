@@ -5,6 +5,8 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - pink: {fileID: 4831819134393303877, guid: 20a8f6eec93ab5942b73ea8ceea52d49, type: 3}
+  - player: {fileID: 2846497050583127799, guid: 814fb3e5865e74a42a3b7f2afad0e10b,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
