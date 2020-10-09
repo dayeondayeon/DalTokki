@@ -7,7 +7,7 @@ public class Enemy_bulletshot : MonoBehaviour
     public float speed = 5f;
     void Start()
     {
-        Destroy(gameObject,1f);
+        Destroy(gameObject,3f);
     }
 
     // Update is called once per frame

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletCreate : MonoBehaviour
 {
-    // player 탄환 생성
+    // Start is called before the first frame update
     Vector3 in_pos;
     Vector3 pos;
     private float time = 1.0f;

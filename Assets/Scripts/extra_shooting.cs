@@ -31,7 +31,8 @@ public class extra_shooting : MonoBehaviour {
 
             if (player.health == 0) {
                 Debug.Log("Destroyed");
-                Destroy(col.gameObject);
+                //col.gameObject.SetActive(false);
+                //Destroy(col.gameObject);
             }                    
         }
     }

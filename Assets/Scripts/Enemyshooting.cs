@@ -7,16 +7,17 @@ public class Enemyshooting : MonoBehaviour
     //적 탄환 생성
     Vector3 pos;
     Vector3 in_pos; // bulletspot위치 
-    private float time = 0.5f;
+    private float time = 1.0f;
     private float timecheck = 0.0f;
     public GameObject mint = null; // 총알 에셋
-    //public GameObject boss = null;
-    void Start(){
+    public GameObject boss = null;
+
+    /*void Start(){
         in_pos = transform.position;
         respawnbullet();
-    }
+    }*/
 
-    void respawnbullet(){
+    /*void respawnbullet(){
         GameObject mints = GameObject.Instantiate(this.mint) as GameObject;
         mints.transform.position = in_pos;
        // mints.transform.rotation = transform.rotation;
@@ -31,5 +32,23 @@ public class Enemyshooting : MonoBehaviour
             timecheck = 0.0f;
         }
 
+    }*/
+
+    void Update(){
+        timecheck += Time.deltaTime;
+        if(timecheck>=time){
+            shoot();
+            timecheck = 0.0f;
+        }
+       
+    }
+
+    void shoot(){
+        for(int i = 0; i<360;i+=13){
+            GameObject temp = Instantiate(mint);
+            Destroy(temp,2f);
+            temp.transform.position = boss.transform.position;
+            temp.transform.rotation = Quaternion.Euler(0,0,i);
+        }
     }
 }

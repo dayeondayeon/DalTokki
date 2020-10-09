@@ -11,12 +11,14 @@ public class Player : MonoBehaviour
     public float health;
     public float energy;
     public float score;
+    public bool playerDead;
 
     public Image healthBar;
     public Text HPText;
     public Image energyBar;
     public Text EnergyText;
     public Text ScoreText;
+
 
     // player 이동
     private Touch touch;
@@ -32,6 +34,8 @@ public class Player : MonoBehaviour
         EnergyText.text = energy.ToString();
         score = 0;
         ScoreText.text = score.ToString();
+
+        playerDead = false;
 
         InvokeRepeating("chargingEnergy", 1f, 1f);
     }
@@ -73,6 +77,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Player Health : " + health);
+
         if(Input.touchCount > 0){
           foreach(Touch touch in Input.touches){
                Vector2 touchPos = new Vector2(touch.position.x, touch.position.y);
@@ -86,13 +92,21 @@ public class Player : MonoBehaviour
                     }
             }
         }
+
+        if (health == 0) {
+            playerDead = true;
+            Debug.Log("player dead!");
+        }
+
     }
 
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.CompareTag("enemy")){
             //Debug.Log("Collision");
            // Vector2 pos = col.gameObject.transform.position;
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            Damage(1);
+
         }
     }
 }

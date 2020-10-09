@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7759683786078415180}
   - component: {fileID: 380334291707613473}
-  - component: {fileID: -2539827666954088243}
+  - component: {fileID: -7935087466212525033}
   m_Layer: 0
   m_Name: mint
   m_TagString: Untagged
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2539827666954088243
+--- !u!114 &-7935087466212525033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8075622442782931522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28807509b946f684a8ecb5c2d9d17833, type: 3}
+  m_Script: {fileID: 11500000, guid: e19b509eff6a53241be29de097522f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
