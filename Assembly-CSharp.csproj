@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BulletCreate.cs" />
+     <Compile Include="Assets\Scripts\Enemy_bulletshot.cs" />
      <Compile Include="Assets\Scripts\Enemyshooting.cs" />
      <Compile Include="Assets\Scripts\extra_bullet_create.cs" />
      <Compile Include="Assets\Scripts\extra_move.cs" />
