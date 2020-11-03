@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class extra_shooting : MonoBehaviour {
     Vector2 pos;
-    float speed = 5;
+    float speed = 4;
 
     private Player player;
 
@@ -27,12 +27,8 @@ public class extra_shooting : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.CompareTag("Player")){
             player.Damage(1);
-            Debug.Log("Damaged!");
 
             if (player.health == 0) {
-                Debug.Log("Destroyed");
-                //col.gameObject.SetActive(false);
-                //Destroy(col.gameObject);
             }                    
         }
     }

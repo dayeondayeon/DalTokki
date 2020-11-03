@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9ea43b89b3da83f42a556c62707c9b82
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - juice: {fileID: 8524841084098264536, guid: 07f82e4cfec350d48a1fb85f2a0814e6, type: 3}
+  - cookie: {fileID: 6432181340475826875, guid: 184c64264fa6b3e49addcb28e5ed6411,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

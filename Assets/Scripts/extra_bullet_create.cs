@@ -6,7 +6,7 @@ public class extra_bullet_create : MonoBehaviour
 {
     Vector3 in_pos;
     Vector3 pos;
-    private float time = 1.0f;
+    private float time = 2.0f;
     private float timecheck = 0.0f;
     public GameObject bullet = null;
     public GameObject extra = null;

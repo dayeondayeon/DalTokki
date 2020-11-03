@@ -77,16 +77,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Player Health : " + health);
-
         if(Input.touchCount > 0){
-          foreach(Touch touch in Input.touches){
+            foreach(Touch touch in Input.touches){
                Vector2 touchPos = new Vector2(touch.position.x, touch.position.y);
                     if(touch.phase == TouchPhase.Moved){
                         //Debug.Log(touchPos);
-                       
+                        
                         touchPos.x =touchPos.x - (Screen.width/2);
                         touchPos.y = touchPos.y -(Screen.height/2);
+                        
                         transform.localPosition = (touchPos);
                        
                     }
@@ -102,11 +101,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.CompareTag("enemy")){
-            //Debug.Log("Collision");
-           // Vector2 pos = col.gameObject.transform.position;
-            //Destroy(gameObject);
-            Damage(1);
-
+            Destroy(gameObject);
         }
     }
 }

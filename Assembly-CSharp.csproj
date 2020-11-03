@@ -66,11 +66,12 @@
      <Compile Include="Assets\Scripts\extra_move.cs" />
      <Compile Include="Assets\Scripts\extra_shooting.cs" />
      <Compile Include="Assets\Scripts\extramonster.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
+     <Compile Include="Assets\Scripts\meteorCreate.cs" />
+     <Compile Include="Assets\Scripts\meteorMovedown.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\shooting.cs" />
-     <Compile Include="Assets\Scripts\shooting_e_spot1.cs" />
-     <Compile Include="Assets\Scripts\shooting_e_spot2.cs" />
      <Compile Include="Assets\Scripts\test.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/최다연/Desktop/APPS/2020_달토끼/DalTokki/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

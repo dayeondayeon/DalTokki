@@ -4,51 +4,40 @@ using UnityEngine;
 
 public class Enemyshooting : MonoBehaviour
 {
-    //적 탄환 생성
-    Vector3 pos;
+    //적 탄환 생성스크립트
+    //enemy bulletshot에서..
     Vector3 in_pos; // bulletspot위치 
-    private float time = 1.0f;
+    private float time = 0.5f;
     private float timecheck = 0.0f;
-    public GameObject mint = null; // 총알 에셋
-    public GameObject boss = null;
-
-    /*void Start(){
+    public GameObject mint = null; 
+    private int cooltime = 50;
+    private int cooltimecheck = 0;
+    void Start(){
         in_pos = transform.position;
-        respawnbullet();
-    }*/
+        //respawnbullet();
+    }
 
-    /*void respawnbullet(){
-        GameObject mints = GameObject.Instantiate(this.mint) as GameObject;
-        mints.transform.position = in_pos;
-       // mints.transform.rotation = transform.rotation;
+    void respawnbullet(){
+        for(int i = 0; i<360; i+=13){
+            GameObject mints = GameObject.Instantiate(this.mint) as GameObject;
+            Destroy(mints,2f);
+            mints.transform.position = in_pos;
+            mints.transform.rotation =  Quaternion.Euler(0,0,i);
+        }
     }
     void Update()
     {
-       // in_pos.x = boss.transform.position.x-2.5f;
-       // in_pos.y = boss.transform.position.y -2.0f;
        timecheck += Time.deltaTime;
-        if(timecheck>=time){
+        if((timecheck>=time)&&(cooltimecheck < cooltime)){
             this.respawnbullet();
             timecheck = 0.0f;
+            cooltimecheck++;
         }
 
-    }*/
+        cooltimecheck = 0;
+        timecheck = 0.0f;
 
-    void Update(){
-        timecheck += Time.deltaTime;
-        if(timecheck>=time){
-            shoot();
-            timecheck = 0.0f;
-        }
-       
+        
     }
 
-    void shoot(){
-        for(int i = 0; i<360;i+=13){
-            GameObject temp = Instantiate(mint);
-            Destroy(temp,2f);
-            temp.transform.position = boss.transform.position;
-            temp.transform.rotation = Quaternion.Euler(0,0,i);
-        }
-    }
 }
