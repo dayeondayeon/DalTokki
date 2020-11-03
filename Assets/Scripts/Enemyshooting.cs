@@ -9,7 +9,7 @@ public class Enemyshooting : MonoBehaviour
     Vector3 in_pos; // bulletspot위치 
     private float time = 0.5f;
     private float timecheck = 0.0f;
-    private float rot_speed = 5fs;
+    private float rot_speed = 5f;
     public GameObject mint = null; 
     private int cooltime = 50; //50번까지 탄막쏘기 가능
     private int circle_cooltimecheck = 0;
