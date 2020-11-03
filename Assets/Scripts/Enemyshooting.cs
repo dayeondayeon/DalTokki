@@ -9,15 +9,15 @@ public class Enemyshooting : MonoBehaviour
     Vector3 in_pos; // bulletspot위치 
     private float time = 0.5f;
     private float timecheck = 0.0f;
+    private float rot_speed = 5fs;
     public GameObject mint = null; 
-    private int cooltime = 50;
-    private int cooltimecheck = 0;
+    private int cooltime = 50; //50번까지 탄막쏘기 가능
+    private int circle_cooltimecheck = 0;
+    private int rotate_cooltimecheck = 0;
     void Start(){
         in_pos = transform.position;
-        //respawnbullet();
     }
-
-    void respawnbullet(){
+    void circleshot(){
         for(int i = 0; i<360; i+=13){
             GameObject mints = GameObject.Instantiate(this.mint) as GameObject;
             Destroy(mints,2f);
@@ -25,19 +25,29 @@ public class Enemyshooting : MonoBehaviour
             mints.transform.rotation =  Quaternion.Euler(0,0,i);
         }
     }
+
+    void rotateshot(){
+        transform.Rotate(Vector3.forward * rot_speed*100*Time.deltaTime);
+        GameObject mints = GameObject.Instantiate(this.mint) as GameObject;
+        Destroy(mints,2f);
+        mints.transform.position = in_pos;
+        mints.transform.rotation = transform.rotation;
+    }
+
     void Update()
     {
        timecheck += Time.deltaTime;
-        if((timecheck>=time)&&(cooltimecheck < cooltime)){
-            this.respawnbullet();
+        if((timecheck>=time)&&(circle_cooltimecheck < cooltime)){
+            this.circleshot();
             timecheck = 0.0f;
-            cooltimecheck++;
+            circle_cooltimecheck++;
         }
 
-        cooltimecheck = 0;
-        timecheck = 0.0f;
-
-        
+        if(circle_cooltimecheck >= cooltime){
+            this.rotateshot();
+            timecheck = 0.0f;
+            rotate_cooltimecheck++;
+        }
     }
-
+//&&(rotate_cooltimecheck < cooltime)
 }
