@@ -14,9 +14,7 @@ public class Enemyshooting : MonoBehaviour
     private int cooltime = 50; //50번까지 탄막쏘기 가능
     private int circle_cooltimecheck = 0;
     private int rotate_cooltimecheck = 0;
-    void Start(){
-        in_pos = transform.position;
-    }
+    
     void circleshot(){
         for(int i = 0; i<360; i+=13){
             GameObject mints = GameObject.Instantiate(this.mint) as GameObject;
@@ -36,7 +34,8 @@ public class Enemyshooting : MonoBehaviour
 
     void Update()
     {
-       timecheck += Time.deltaTime;
+        in_pos = transform.position;
+        timecheck += Time.deltaTime;
         if((timecheck>=time)&&(circle_cooltimecheck < cooltime)){
             this.circleshot();
             timecheck = 0.0f;
@@ -49,5 +48,4 @@ public class Enemyshooting : MonoBehaviour
             rotate_cooltimecheck++;
         }
     }
-//&&(rotate_cooltimecheck < cooltime)
 }
