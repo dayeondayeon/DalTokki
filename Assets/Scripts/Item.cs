@@ -10,7 +10,6 @@ public class Item : MonoBehaviour
     GameObject temp;
     Vector2 temp_pos;
     Vector2 pos;
-    float speed = 2;
 
     void Start()
     {
@@ -20,13 +19,14 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pos = transform.position;
+        /*pos = transform.position;
         pos.y -= speed * Time.deltaTime;
         transform.position = pos;
         if (pos.y < -10)
         {
             Destroy(gameObject);
-        }
+            Debug.Log("y축 감소");
+        }*/
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -49,7 +49,6 @@ public class Item : MonoBehaviour
            temp = GameObject.Instantiate(this.cookie) as GameObject;
            transferItem();
        }
-
     }
 
     void transferItem() {
@@ -57,5 +56,4 @@ public class Item : MonoBehaviour
         temp_pos.y += 10;
         temp.transform.position = temp_pos;
     }
-
 }

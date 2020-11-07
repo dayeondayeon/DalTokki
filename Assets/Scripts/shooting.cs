@@ -8,18 +8,17 @@ public class shooting : MonoBehaviour
     Vector2 pos;
     float speed = 5;
     Player player;
-   // private Script Itemscript;
+    Item item;
 
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        item = GameObject.FindWithTag("GameManager").GetComponent<Item>();
     }
 
     void Update(){
         pos = transform.position;
         pos.y += speed*Time.deltaTime;
         transform.position = pos;
-        //Itemscript = GameObject.Find("Player").GetComponent<Item>();
-
         if(pos.y > 6)
         {
             Destroy(gameObject);
@@ -31,8 +30,8 @@ public class shooting : MonoBehaviour
             Destroy(col.gameObject);
             player.getScore(100);
             bool random = (Random.value>0.4f);
-            if(random == true)
-               GameObject.Find("GameManager").GetComponent<Item>().createItem();
+            if(random == true)  
+               item.createItem();
         }
     }
 }
