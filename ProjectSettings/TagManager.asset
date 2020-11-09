@@ -6,6 +6,8 @@ TagManager:
   tags:
   - enemy
   - bullet
+  - GameManager
+  - Meteor
   layers:
   - Default
   - TransparentFX

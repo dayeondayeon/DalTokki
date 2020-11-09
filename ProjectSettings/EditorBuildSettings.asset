@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scripts/Scenes/boss_battle.unity
+    path: Assets/Scripts/Scenes/Main.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scripts/Scenes/StageSelect.unity
+    guid: dab3ed909763fd74e82f2ddd68950847
+  - enabled: 1
+    path: Assets/Scripts/Scenes/extra_battle.unity
+    guid: cf9d8d756a70f92488e7c205560231fa
+  - enabled: 1
+    path: Assets/Scripts/Scenes/boss_battle.unity
+    guid: 88bcc20943ea1194c879261598e5fe85
   m_configObjects: {}

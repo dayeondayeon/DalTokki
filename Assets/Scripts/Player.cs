@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
@@ -73,14 +74,17 @@ public class Player : MonoBehaviour
     void Update()
     {
         if(Input.touchCount > 0){
-            foreach(Touch touch in Input.touches) {
-               Vector2 touchPos = new Vector2(touch.position.x, touch.position.y);
-               if(touch.phase == TouchPhase.Moved) {
-                    touchPos.x =touchPos.x - (Screen.width/2);
-                    touchPos.y = touchPos.y -(Screen.height/2);
-                    transform.localPosition = (touchPos);
+          //  if(!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)){
+                foreach(Touch touch in Input.touches) {
+                Vector2 touchPos = new Vector2(touch.position.x, touch.position.y);
+                if(touch.phase == TouchPhase.Moved) {
+                        touchPos.x = touchPos.x - (Screen.width/2);
+                        touchPos.y = touchPos.y -(Screen.height/2);
+                        transform.localPosition = (touchPos);
+                    }
                 }
-            }
+            //}
+
         }
 
         if (health == 0) {
@@ -95,4 +99,13 @@ public class Player : MonoBehaviour
             Damage(1);
         }
     }
+
+   /* public bool IsPointerOverGameObject(Vector2 touchPos){
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = touchPos;
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition,results);
+        return results.Count > 0;
+    }*/
+
 }

@@ -6,10 +6,7 @@ public class Item_down : MonoBehaviour
 {
     Vector2 pos;
     float speed = 2f;
-    void Start()
-    {
-        
-    }
+    
     void Update()
     {
         pos = transform.position;
@@ -18,7 +15,6 @@ public class Item_down : MonoBehaviour
         if (pos.y < -10)
         {
             Destroy(gameObject);
-            Debug.Log("y축 감소");
         }
     }
 }
