@@ -71,6 +71,10 @@ public class Player : MonoBehaviour
         energyBar.fillAmount = energy / 100;
     }
 
+    public void initializeEnergy(){
+        energy = 0f;
+    }
+
     void Update()
     {
         if(Input.touchCount > 0){

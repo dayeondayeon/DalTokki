@@ -4,46 +4,29 @@ using UnityEngine;
 
 public class ultimateshot : MonoBehaviour
 {
-    public GameObject pinkbullet;
-    public GameObject pinkhierarchybullet;
-    public GameObject ultimatebullet;
-    public GameObject button;
+   // public GameObject pinkbullet;
+    //public GameObject pinkhierarchybullet;
+    //public GameObject ultimatebullet;
     Player player;
     Vector2 pos;
-    private float speed = 3.0f;
+    private float speed = 5.0f;
     
-
-
     void Start(){
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        pos = player.transform.position;
     }
-    public void setActiveOrNot()
+    void Update()
     {
-        Debug.Log("SetActive함수");
-        if(checkMPMax() == true){
-            pinkbullet.SetActive(false);
-            pinkhierarchybullet.SetActive(false);
-            shot();
-            pinkbullet.SetActive(true);
-            pinkhierarchybullet.SetActive(true);
+        pos.y += speed*Time.deltaTime;
+        transform.position = pos; 
+        if(pos.y > 10){
+            Destroy(gameObject);
         }
     }
-
-    bool checkMPMax(){
-        if(player.energy == 100)
-            return true;
-        else
-            return false; 
-    }
-
-    void shot(){
-        Instantiate(ultimatebullet);
-        pos.x = player.transform.position.x;
-        pos.y = player.transform.position.y + speed*Time.deltaTime;
-        ultimatebullet.transform.position = pos;
-
-        if(pos.y > 10){
-            Destroy(ultimatebullet);
+    void OnCollisionEnter2D(Collision2D col){
+        if(col.gameObject.CompareTag("Enemy")){
+            Destroy(col.gameObject);
+            player.getScore(200);
         }
     }
 }

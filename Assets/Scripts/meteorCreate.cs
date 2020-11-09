@@ -6,7 +6,6 @@ public class meteorCreate : MonoBehaviour
 {
     Vector2 pos;
     public GameObject meteor = null;
-    private float speed = 3.5f;
     private float time = 5.0f;
     private float timecheck = 0.0f;
     void Update()

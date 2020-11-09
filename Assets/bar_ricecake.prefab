@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8730117679452354146}
   - component: {fileID: 7938079825383578012}
+  - component: {fileID: 8523020582433091145}
   m_Layer: 0
   m_Name: bar_ricecake
-  m_TagString: Untagged
+  m_TagString: UltimateShot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7236785336974691032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -80,3 +81,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8523020582433091145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7236785336974691032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55215a8b6562b249bb5a975ba3db1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinkbullet: {fileID: 4831819134393303877, guid: 20a8f6eec93ab5942b73ea8ceea52d49,
+    type: 3}
+  pinkhierarchybullet: {fileID: 0}
+  ultimatebullet: {fileID: 7236785336974691032}

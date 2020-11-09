@@ -16,19 +16,6 @@ public class Item : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        /*pos = transform.position;
-        pos.y -= speed * Time.deltaTime;
-        transform.position = pos;
-        if (pos.y < -10)
-        {
-            Destroy(gameObject);
-            Debug.Log("y축 감소");
-        }*/
-    }
-
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player"))
@@ -40,7 +27,6 @@ public class Item : MonoBehaviour
 
     public void createItem(){
         bool random = (Random.value>0.5f);
-        Debug.Log("item created!");
         if(random == true){
             temp = GameObject.Instantiate(this.juice) as GameObject;
             transferItem();
