@@ -7,12 +7,12 @@ public class shooting : MonoBehaviour
     //player탄환 발사 코드
     Vector2 pos;
     float speed = 5;
-    Player player;
+    public Player player;
     Item item;
 
     void Start() {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        item = GameObject.FindWithTag("GameManager").GetComponent<Item>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent <Player>();
+        item = GameObject.FindWithTag("GameManager").GetComponent <Item>();
     }
 
     void Update(){
@@ -33,5 +33,6 @@ public class shooting : MonoBehaviour
             if(random == true)  
                item.createItem();
         }
+    
     }
 }

@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class ultimateshot : MonoBehaviour
 {
-   // public GameObject pinkbullet;
-    //public GameObject pinkhierarchybullet;
-    //public GameObject ultimatebullet;
     Player player;
+    Boss boss;
     Vector2 pos;
     private float speed = 5.0f;
     
@@ -15,18 +13,23 @@ public class ultimateshot : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         pos = player.transform.position;
     }
+
     void Update()
     {
         pos.y += speed*Time.deltaTime;
         transform.position = pos; 
-        if(pos.y > 10){
+        if (pos.y > 10){
             Destroy(gameObject);
         }
     }
+
     void OnCollisionEnter2D(Collision2D col){
-        if(col.gameObject.CompareTag("Enemy")){
+        if (col.gameObject.CompareTag("Enemy")){
             Destroy(col.gameObject);
             player.getScore(200);
+        }
+        if (col.gameObject.CompareTag("Boss")){
+            boss.BossDamage(10);
         }
     }
 }

@@ -8,6 +8,9 @@ TagManager:
   - bullet
   - GameManager
   - Meteor
+  - UltimateShot
+  - Boss
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

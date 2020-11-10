@@ -22,7 +22,6 @@ public class Enemy_bulletshot : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col){
        if(col.gameObject.CompareTag("Player")){
            player.Damage(1);
-           Debug.Log("Damaged");
        }
    }
 }
